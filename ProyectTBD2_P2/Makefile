@@ -1,5 +1,5 @@
 TARGET=Exec
-C_SRCFILES=main.cpp DiskAPI.cpp DBAPI.cpp DBAPI_Helpers.cpp
+C_SRCFILES=main.cpp DBMaker.cpp TableMaker.cpp Helper.cpp
 OBJ_FILES=${C_SRCFILES:.cpp=.o}
 .PHONY: clean
 

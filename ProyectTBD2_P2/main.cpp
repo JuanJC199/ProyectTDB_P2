@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cstring>
 #include <stdlib.h>
-#include "DBAPI.h"
+#include "TableMaker.h"
 
 using namespace std;
 
@@ -44,8 +44,7 @@ int main(int argc, char **argv){
         else if(!strcmp(op1, "create") && !strcmp(op2, "table"))
         {
             create_table(database_to_use, op3, get_values(op4), get_values(op5), get_values(op6));
-            string tuses = "Tabla creada!" ;
-            cout <<tuses<<endl;
+            cout<<"Se creo la tabla"<<endl;
         }
         else if(!strcmp(op1, "drop") && !strcmp(op2, "table"))
         {
@@ -77,19 +76,18 @@ int main(int argc, char **argv){
         }
         else if(!strcmp(op1, "help"))
         {
-            cout << "-----------------------------------------------------------" << endl;
-            cout << "Create database ---> create database name size type || type ex=kb, mb, gb" << endl;
-            cout << "Drop database ---> drop database name" << endl;
-            cout << "Select database to use ---> use database name" << endl;
-            cout << "Create table ---> create table name -columns=col1,col2,col3 -type=int,double,char(50) -key=col1" << endl;
-            //create table mayore -columns=id,nombre,numero -type=int,char(50),int -key=id
-            cout << "Drop table ---> drop table table_name" << endl;
-            cout << "Show all database tables ---> show tables" << endl;
-            cout << "Insert ---> insert table_name -columns=col1,col2,col3 -values=value1,value2,value3" << endl;
-            cout << "Update ---> update table_name -columns=col1,col2 -values=1,2 -where=col1<>1" << endl;
-            cout << "Delete ---> delete table_name -where=col<>cond" << endl;
-            cout << "Select ---> select -table=table_name -columns=col1,col2 || optional -where=col<>cond" << endl;
-            cout << "-----------------------------------------------------------" << endl;
+            cout << "*************************************************************" << endl;
+            cout << "Crear  BD        -> create database name size type || type ex=kb, mb, gb" << endl;
+            cout << "Borrar BD        -> drop database name" << endl;
+            cout << "Seleccionar BD   -> use database name" << endl;
+            cout << "Crear una tabla  -> create table name -columns=col1,col2,col3 -type=int,double,char(50) -key=col1" << endl;
+            cout << "Borrar una tabla -> drop table table_name" << endl;
+            cout << "Mostrar tablas   -> show tables" << endl;
+            cout << "Insertar Registro-> insert table_name -columns=col1,col2,col3 -values=value1,value2,value3" << endl;
+            cout << "Actualizar Reg.  -> update table_name -columns=col1,col2 -values=1,2 -where=col1<>1" << endl;
+            cout << "Borrar Registro  -> delete table_name -where=col<>cond" << endl;
+            cout << "Mostrar Reg.     -> select -table=table_name -columns=col1,col2 " << endl;
+            cout << "*************************************************************" << endl;
         }
         else if(!strcmp(op1, "exit"))
         {

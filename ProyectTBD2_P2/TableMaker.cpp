@@ -1,4 +1,4 @@
-#include "DBAPI.h"
+#include "TableMaker.h"
 #include <stdlib.h>
 #include <cstring>
 #include <math.h>
@@ -147,6 +147,7 @@ void drop_table(char* name, char* table){
         read_block(name, next_block, temp_buff);
         memcpy(&next_block, &temp_buff[4092], 4);
     }
+    cout<<"Se creo la tabla"<<endl;
 }
 
 void insert_register(char* name, char* table_name, char* columns, char* values){
@@ -331,7 +332,7 @@ void select_show(char* name, char* table, char* columns, char* where){
     }
 
     cout << column_names << endl;
-
+    cout << "**********************" << endl;
     read_block(name, next_block, db_buffer);
     int block_count = 0;
 
